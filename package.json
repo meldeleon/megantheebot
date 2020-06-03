@@ -1,0 +1,29 @@
+{
+  "name": "megantheebot",
+  "version": "1.0.0",
+  "description": "bot for megantheebot",
+  "main": "megantheebot.js",
+  "dependencies": {
+    "nodemon": "^2.0.4",
+    "tmi.js": "^1.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node juicebothero.js",
+    "watch": "nodemon juicebothero.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meldeleon/megantheebot.git"
+  },
+  "keywords": [
+    "bot",
+    "twitch"
+  ],
+  "author": "meldeleon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meldeleon/megantheebot/issues"
+  },
+  "homepage": "https://github.com/meldeleon/megantheebot#readme"
+}
