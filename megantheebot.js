@@ -28,16 +28,22 @@ function onMessageHandler(target, context, msg, self) {
   let triggerList = quotes.map((command) => {
     return command.triggers;
   });
-  console.log("triggerList:" + triggerList);
   console.log(messageArray);
-  // check each word in message against the triggerList array
 
-  messageArray.map((word) => {
+  let escapedArray = messageArray.map((word) => {
+    return word.toLowerCase().replace(/[^a-zA-Z ]/g, "");
+  });
+  // check each word in message against the triggerList array
+  let dedupedArray = [...new Set(escapedArray)];
+  dedupedArray.map((word) => {
     console.log(word);
     for (let i = 0; i < triggerList.length; i++) {
-      console.log(i);
-      if (triggerList.includes(word)) {
-        console.log(quotes.trigger[i].quote);
+      if (triggerList[i].includes(word)) {
+        if (Math.random() < 0.25) {
+          client.say(target, quotes[i].quote);
+          console.log(quotes[i].quote);
+          return;
+        }
       }
     }
   });
